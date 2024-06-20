@@ -1,0 +1,16 @@
+/* Form for login and registration */
+.custom-container {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    margin-top: 50px;
+}
+.form-control {
+    border-radius: 5px;
+}
+.btn-primary {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+}
