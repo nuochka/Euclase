@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 public class SecurityConfig {
@@ -25,17 +26,20 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/registration", "/login", "/css/**").permitAll()
+                .requestMatchers("/css/**").permitAll()
+                .requestMatchers("/", "/registration", "/login").anonymous()
+                .requestMatchers("/home").authenticated()
                 .anyRequest().authenticated()
             )
             .formLogin((form) -> form
                 .loginPage("/login")
                 .defaultSuccessUrl("/home", true)
+                .successHandler(successHandler())
                 .permitAll()
             )
             .logout((logout) -> logout
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout")
+                .logoutSuccessUrl("/login?logout=true")
                 .permitAll()
             );
 
@@ -47,5 +51,13 @@ public class SecurityConfig {
         auth
             .userDetailsService(userDetailsService)
             .passwordEncoder(passwordEncoder());
+    }
+
+    private AuthenticationSuccessHandler successHandler(){
+        return (request, response, authentication) -> {
+            String username = authentication.getName();
+            request.getSession().setAttribute("username", username);
+            response.sendRedirect("/home");
+        };
     }
 }

@@ -1,4 +1,4 @@
-package com.euclase.service.security;
+package com.euclase.security;
 
 import java.util.Collections;
 
