@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>To-Do List</h1>
+    <form th:action="@{/tasks/add}" th:object="${newTask}" method="post">
+        <div class="form-group">
+            <label for="taskTitle">New Task:</label>
+            <input type="text" class="form-control" id="taskTitle" th:field="*{title}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+
+    <hr>
+
+    <ul class="list-group">
+        <li th:each="task : ${tasks}" class="list-group-item">
+            <span th:text="${task.title}"></span>
+            <form th:action="@{/tasks/{id}(id=${task.id})}" method="post" style="display: inline;">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </form>
+        </li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
