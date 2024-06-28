@@ -1,8 +1,8 @@
-package com.euclase.service.implementation;
+package com.euclase.auth_service.implementation;
 
-import com.euclase.service.UserService;
-import com.euclase.model.User;
-import com.euclase.repository.UserRepository;
+import com.euclase.auth_service.service.UserService;
+import com.euclase.auth_service.model.User;
+import com.euclase.auth_service.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

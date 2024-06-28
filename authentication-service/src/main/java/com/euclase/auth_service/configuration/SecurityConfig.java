@@ -1,4 +1,4 @@
-package com.euclase.configuration;
+package com.euclase.auth_service.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

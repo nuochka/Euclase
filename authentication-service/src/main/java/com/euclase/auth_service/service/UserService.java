@@ -1,4 +1,4 @@
-package com.euclase.service;
+package com.euclase.auth_service.service;
 
 
 public interface UserService {

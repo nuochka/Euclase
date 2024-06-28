@@ -1,11 +1,11 @@
-package com.euclase.controller;
+package com.euclase.auth_service.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.euclase.model.User;
+import com.euclase.auth_service.model.User;
 @Controller
 public class SessionController {
     @ModelAttribute("user")

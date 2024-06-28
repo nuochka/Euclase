@@ -1,4 +1,4 @@
-package com.euclase.security;
+package com.euclase.auth_service.security;
 
 import java.util.Collections;
 
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.euclase.model.User;
-import com.euclase.repository.UserRepository;
+import com.euclase.auth_service.model.User;
+import com.euclase.auth_service.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

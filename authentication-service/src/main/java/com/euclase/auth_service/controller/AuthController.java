@@ -1,4 +1,4 @@
-package com.euclase.controller;
+package com.euclase.auth_service.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
-import com.euclase.model.User;
-import com.euclase.repository.UserRepository;
-import com.euclase.service.UserService;
+import com.euclase.auth_service.model.User;
+import com.euclase.auth_service.repository.UserRepository;
+import com.euclase.auth_service.service.UserService;
 
 import jakarta.validation.Valid;
 

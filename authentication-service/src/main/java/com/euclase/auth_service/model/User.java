@@ -1,4 +1,4 @@
-package com.euclase.model;
+package com.euclase.auth_service.model;
 
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;

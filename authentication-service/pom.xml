@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.euclase</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>auth-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Euclase</name>
-    <description>Task and project management system</description>
+    <name>auth-service</name>
+    <description>Authentication service</description>
     <url/>
     <licenses>
         <license/>
