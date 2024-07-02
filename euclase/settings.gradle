@@ -1,2 +1,6 @@
 rootProject.name = 'euclase'
 
+includeBuild 'eureka-server'
+includeBuild 'auth-service'
+includeBuild 'task-service'
+
